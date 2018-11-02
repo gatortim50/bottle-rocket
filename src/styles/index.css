@@ -1,0 +1,206 @@
+:root {
+  --greenBackground: #34E895;
+  --blackBackground: #2A2A2A;
+  --headerFooterHeight: 50px;
+  --whiteFontColor: #FFFFFF;
+  --grayFontColor: #979797;
+  --margins: 12px;
+  --fontRegular: "Avenir Next Regular", "Calibri";
+  --fontBold: "Avenir Next Demi Bold", "Cooper Black";
+  --iconImageHeight: 25px;
+  --mainBodyTileHeight: 180px;
+  --mapsSpacing: 26px;
+}
+
+/* global styles */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;    
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+@media only screen and (min-width: 1920px) {      
+  
+}
+
+.frame {
+  height: var(--headerFooterHeight);    
+  color: var(--whiteFontColor);
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  color: var(--whiteFontColor);
+  left: 0;  
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;  
+  align-items: center;  
+  width: 33.33%;
+  height: 100%;  
+}
+
+.icon-images {
+  height: var(--iconImageHeight);
+  width: auto;
+}
+
+
+/* header */
+header {      
+  background-color: var(--greenBackground);    
+  font-family: var(--fontBold);  
+  top: 0;  
+  font-size: 17px;
+  flex-shrink: 0;
+}
+
+#header-left {
+  float: left;
+}
+
+#header-back-icon {
+  padding-left: var(--margins);
+}
+
+#header-middle {
+  float: left;
+  justify-content: center;
+}
+
+#header-right {
+  justify-content: flex-end;
+}
+
+#header-map-icon {  
+  padding-right: 12px;
+}
+
+
+/* body */
+.main-body-frame {  
+  margin-top: var(--headerFooterHeight);    
+  overflow: auto;  
+}
+
+@media only screen and (min-width: 1439px) {
+  .main-body-frame {
+    margin-top: var(--headerFooterHeight);    
+    overflow: auto;  
+    align-self: flex-end;
+    width: 60%;
+  }
+}
+
+.restaurant-list-item {    
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  background-size: 100%;
+  height: var(--mainBodyTileHeight);    
+}
+
+@media only screen and (min-width: 730px) {      
+  ul {
+    columns: 2;
+    column-gap: 0;    
+  }
+  ul li {
+    float: left;
+    -webkit-column-break-inside: avoid; 
+    page-break-inside: avoid;    
+  }
+}
+
+#list-background {
+  width: 100%; 
+  height: 100%;
+  position: relative;  
+}
+
+#restaurant-list-name {
+  color: var(--whiteFontColor);
+  padding-left: var(--margins);  
+  font-family: var(--fontBold);
+  font-size: 16px;   
+}
+
+#restaurant-list-category {
+  color: var(--whiteFontColor);
+  padding-left: var(--margins);
+  padding-bottom: 6px;    
+  font-family: var(--fontRegular);
+  font-size: 12px;
+}
+
+
+/* drawer */
+#flyout-drawer {
+  width: 100%;
+  height: 100%;
+  margin-top: var(--headerFooterHeight);  
+  position: fixed;  
+  top: 0;
+  left: 0;
+  transition: transform 2s cubic-bezier(0, 0.7, 0, 1);  
+  z-index: 1000;
+  overflow: scroll;
+  background-color: white;
+}
+
+#flyout-drawer.hide {
+  transform: translate3d( -100vw, 0,0  );
+}
+
+#flyout-drawer.show {
+  transform: translate3d( 0vw, 0, 0 );
+}
+
+@media only screen and (min-width: 1439px) {
+  #flyout-drawer {
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+  } 
+
+  #flyout-drawer.hide {
+    transform: translate3d( 0vw, 0,0  );
+  }
+  
+  #flyout-drawer.show {
+    transform: translate3d( 0vw, 0, 0 );
+  }
+}
+
+.restaurant-details {
+  height: 60px;
+  background-color: var(--greenBackground);
+  display: flex;
+  align-items: center;
+}
+
+.location-details {
+  margin-left: var(--margins);
+  margin-top: 16px;
+  font-family: var(--fontRegular);
+  font-size: 16px;
+  color: var(--blackBackground);
+}
+
+.info-spacing {
+  margin-top: var(--mapsSpacing);
+}
+
+.map-container {
+  height: var(--mainBodyTileHeight);
+}
