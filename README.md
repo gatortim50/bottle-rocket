@@ -1,5 +1,16 @@
 # Bottle Rocket
 
+## Install
+
+```js
+  git clone git@github.com:gatortim50/bottle-rocket.git
+
+  cd bottle-rocket
+
+  yarn install && yarn start
+
+```
+
 ## Introduction
 
 The intent of this coding test is to assess your ability to work with requirements commonly seen at Bottle Rocket. We want you to display your knowledge of software design patterns, HTML-CSS-Javascript best practices, responsive web design, and working with art comps from our creative team.
